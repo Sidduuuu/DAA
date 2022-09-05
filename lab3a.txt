@@ -1,0 +1,19 @@
+import java.util.Scanner;
+public class Division {
+public static void main(String[] args) {
+int a ,b , c;
+System.out.println("Enter A and B");
+Scanner sc=new Scanner(System.in);
+a=sc.nextInt();
+b=sc.nextInt();
+try
+{
+c=a/b;
+System.out.println("Divison result of A & B is "+ c);
+}
+catch(ArithmeticException e)
+{
+System.out.println("Error:"+e);
+}
+}
+}
