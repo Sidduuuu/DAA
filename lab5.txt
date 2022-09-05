@@ -29,18 +29,19 @@ for(int i=0;i<n;i++)
 {
 System.out.print(a[i]+" ");
 }
-}//end of main
+
 System.out.println("\nThe time taken to sort is "+(end-start)+"ns");
 System.out.println("******************************************");
+}
 static void mergesort(int a[],int low,int high)
 {
 int mid;
 if(low<high)
 {
 mid=(low+high)/2;
-mergesort(a,low,mid);//recursively sort left part
-mergesort(a,mid+1,high);//recursively sort right part
-merge(a,low,mid,high); // merge two sorted parts
+mergesort(a,low,mid);
+mergesort(a,mid+1,high);
+merge(a,low,mid,high); 
 }
 }
 static void merge(int a[],int low,int mid,int high)
@@ -54,12 +55,12 @@ temp [ k++ ] = a [ i++ ] ;
 else
 temp [ k++ ] = a [ j++ ] ;
 }
-while( i <= mid )
+while( i <= mid ) 
 temp [ k++ ] = a [ i++ ] ;
-while( j <= high ) //move remaining elements of right half
+while( j <= high ) 
 temp [ k++ ] = a [ j++ ] ;
-//now sorted final elements move from temp to original array
+
 for ( i=low ; i <= high ;i++ )
 a[ i ] = temp [ i ] ;
-}//end of class merge
+}
 }
